@@ -1,0 +1,45 @@
+header(common-header-directive='')
+  // Fixed navbar
+  nav.navbar.navbar-default
+    .container
+      .navbar-header
+        // The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation
+        a.navbar-brand(href='#') Project name
+      // Note that the .navbar-collapse and .collapse classes have been removed from the #navbar
+      #navbar
+        ul.nav.navbar-nav
+          li.active
+            a(href='#') Home
+          li
+            a(href='#about') About
+          li
+            a(href='#contact') Contact
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+              | Dropdown 
+              span.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Action
+              li
+                a(href='#') Another action
+              li
+                a(href='#') Something else here
+              li.divider(role='separator')
+              li.dropdown-header Nav header
+              li
+                a(href='#') Separated link
+              li
+                a(href='#') One more separated link
+        form.navbar-form.navbar-left(role='search')
+          .form-group
+            input.form-control(type='text', placeholder='Search')
+          button.btn.btn-default(type='submit') Submit
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='#') Link
+          li
+            a(href='#') Link
+          li
+            a(href='#') Link
+      // /.nav-collapse

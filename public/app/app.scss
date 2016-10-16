@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@import "app.font.scss";
+
+body {
+    font-family: 'Noto Sans';
+    background: #ddd url(/assets/img/egg-shell.jpg) repeat top left;
+}
+
+// injector
+@import 'app.font.scss';
+@import 'common/controllers/home.controller.scss';
+@import 'common/controllers/wrap.controller.scss';
+@import 'common/directives/header.directive.scss';
+@import 'common/directives/playing-card.directive.scss';
+// endinjector

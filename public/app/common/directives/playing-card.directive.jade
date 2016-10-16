@@ -1,0 +1,6 @@
+div(playing-card-directive='', class='playing-card-{{ vm.open }} playing-card-suit-{{ vm.suit }} playing-card-rank-{{ vm.rank }} playing-card-front-color-{{ vm.frontColor }} playing-card-number-{{ vm.number }} playing-card-{{ vm.highlight }} playing-card-size-{{ vm.size }} playing-card-cover-{{ vm.cover }} ranger-valign-{{ vm.valign }} ranger-flip-{{ vm.flip }} ranger-{{ vm.disabled }}')
+  .flipper
+    .face.front
+      .inner(ng-bind-html='vm.content')
+    .face.back
+      .inner

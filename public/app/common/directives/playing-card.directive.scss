@@ -1,0 +1,426 @@
+[playing-card-directive=''] {
+    $card-width: 114px;
+    $card-height: 154px;
+    $card-rotate: 0deg;
+    perspective: 1000;
+    /*width: $card-width;
+    height: $card-height;*/
+    display: inline-block;
+    border: none !important;
+    &.playing-card-open {
+        .flipper {
+            transform: rotateZ($card-rotate) rotateY(0deg);
+            // transform: rotateY(0deg);
+        }
+    }
+    &.playing-card-highlight {
+        .flipper {
+            > .front, > .back {
+                box-shadow: 0 0 6px 6px yellow;
+            }
+        }
+    }
+    // transform:rotate(10deg);
+    .flipper {
+        border: none !important;
+        transition: 0.7s;
+        transform-style: preserve-3d;
+        position: relative;
+        position: relative;
+        width: $card-width;
+        height: $card-height;
+        /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+        /*transition: all 1s ease-in-out;*/
+        transform: rotateZ($card-rotate) rotateY(180deg);
+        > .front, > .back {
+            transition: 0.7s;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $card-width;
+            height: $card-height;
+            // background-color: #fff;
+            display: inline-block;
+            // border: 1px solid silver;
+            // border-style: solid !important;
+            /*margin-right: -75px;*/
+            transform-origin: 50% 50%;
+            > .inner {
+                transition: transform 0.7s;
+            }
+            /*transform: rotate(10deg) ;*/
+            /*display:none;*/
+            // border-radius: 5px;
+            /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
+            // box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.2);
+       
+        }
+        > .front {
+            // background-color: lightYellow;
+            z-index: 2;
+            transform: rotateY(0deg);
+            .inner {
+                padding: 10px;
+                width: $card-width;
+                height: $card-height;
+                transform-origin: 0 0;
+            }
+        }
+        > .back {
+            // background-color: lightBlue;
+            transform: rotateY(180deg);
+            .inner {
+                width: $card-width;
+                height: $card-height;
+                transform-origin: 0 0;
+            }
+        }
+    }
+    // &.playing-card-size-xs {
+    //     .flipper {
+    //         width: $card-width * 0.53;
+    //         height: $card-height * 0.53;
+    //         > .front, > .back {
+    //             width: $card-width * 0.53;
+    //             height: $card-height * 0.53;
+    //         }
+    //     }
+    // }
+    &.playing-card-size-xs {
+        .flipper {
+            width: $card-width * 0.3;
+            height: $card-height * 0.3;
+            > .front, .back {
+                width: $card-width * 0.3;
+                height: $card-height * 0.3;
+                > .inner {
+                    transform: scale(0.3) !important;
+                }
+            }
+        }
+    }
+    &.playing-card-size-sm {
+        .flipper {
+            width: $card-width * 0.42;
+            height: $card-height * 0.42;
+            > .front, .back {
+                width: $card-width * 0.42;
+                height: $card-height * 0.42;
+                > .inner {
+                    transform: scale(0.42) !important;
+                }
+            }
+        }
+    }
+    &.playing-card-size-md {
+        .flipper {
+            width: $card-width * 0.56;
+            height: $card-height * 0.56;
+            > .front, .back {
+                width: $card-width * 0.56;
+                height: $card-height * 0.56;
+                > .inner {
+                    transform: scale(0.56) !important;
+                }
+            }
+        }
+    }
+    &.playing-card-size-lg {
+        .flipper {
+            width: $card-width * 0.75;
+            height: $card-height * 0.75;
+            > .front, .back {
+                width: $card-width * 0.75;
+                height: $card-height * 0.75;
+                > .inner {
+                    transform: scale(0.75) !important;
+                }
+            }
+        }
+    }
+    &.playing-card-size-xl {
+        .flipper {
+            width: $card-width;
+            height: $card-height;
+            > .front, > .back {
+                width: $card-width;
+                height: $card-height;
+                > .inner {
+                    transform: scale(1) !important;
+                }
+            }
+        }
+    }
+    .front {
+        > .inner {
+            background-image: url(/assets/img/spr-playing-card.png);
+            background-position: $card-width * -12 $card-height * -4;
+        }
+    }
+    .back {
+        > .inner {
+            background-image: url(/assets/img/spr-playing-card.png);
+            background-position: $card-width * -4 $card-height * -4;
+        }
+    }
+    &.playing-card-cover-green {
+        .back {
+            > .inner {
+                background-position: $card-width * -3 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-cover-orange {
+        .back {
+            > .inner {
+                background-position: $card-width * -2 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-cover-red {
+        .back {
+            > .inner {
+                background-position: $card-width * -1 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-cover-black {
+        .back {
+            > .inner {
+                background-position: 0 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-cover-white {
+        .back {
+            > .inner {
+                background-position: $card-width * -5 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-cover-grey {
+        .back {
+            > .inner {
+                background-position: $card-width * -6 $card-height * -4;
+            }
+        }
+    }
+    &.playing-card-suit-s, &.playing-card-suit-S {
+        .front {
+            > .inner {
+                background-position-y: $card-height * 0;
+            }
+        }
+    }
+    &.playing-card-suit-h, &.playing-card-suit-H {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -1;
+            }
+        }
+    }
+    &.playing-card-suit-c, &.playing-card-suit-C {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -2;
+            }
+        }
+    }
+    &.playing-card-suit-d, &.playing-card-suit-D {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -3;
+            }
+        }
+    }
+    &.playing-card-rank-2 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * 0;
+            }
+        }
+    }
+    &.playing-card-rank-3 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -1;
+            }
+        }
+    }
+    &.playing-card-rank-4 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -2;
+            }
+        }
+    }
+    &.playing-card-rank-5 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -3;
+            }
+        }
+    }
+    &.playing-card-rank-6 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -4;
+            }
+        }
+    }
+    &.playing-card-rank-7 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -5;
+            }
+        }
+    }
+    &.playing-card-rank-8 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -6;
+            }
+        }
+    }
+    &.playing-card-rank-9 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -7;
+            }
+        }
+    }
+    &.playing-card-front-color-b, &.playing-front-color-B {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -6;
+            }
+        }
+    }
+    &.playing-card-front-color-w, &.playing-front-color-W {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -5;
+            }
+        }
+    }
+    &.playing-card-front-color-black, &.playing-front-color-BLACK {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -6;
+            }
+        }
+    }
+    &.playing-card-front-color-white, &.playing-front-color-WHITE {
+        .front {
+            > .inner {
+                background-position-y: $card-height * -5;
+            }
+        }
+    }
+    &.playing-card-number-0 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * 0;
+            }
+        }
+    }
+    &.playing-card-number-1 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -1;
+            }
+        }
+    }
+    &.playing-card-number-2 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -2;
+            }
+        }
+    }
+    &.playing-card-number-3 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -3;
+            }
+        }
+    }
+    &.playing-card-number-4 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -4;
+            }
+        }
+    }
+    &.playing-card-number-5 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -5;
+            }
+        }
+    }
+    &.playing-card-number-6 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -6;
+            }
+        }
+    }
+    &.playing-card-number-7 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -7;
+            }
+        }
+    }
+    &.playing-card-number-8 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -8;
+            }
+        }
+    }
+    &.playing-card-number-9 {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -9;
+            }
+        }
+    }
+    &.playing-card-rank-t, &.playing-card-rank-T {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -8;
+            }
+        }
+    }
+    &.playing-card-rank-j, &.playing-card-rank-J {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -9;
+            }
+        }
+    }
+    &.playing-card-rank-q, &.playing-card-rank-Q {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -10;
+            }
+        }
+    }
+    &.playing-card-rank-k, &.playing-card-rank-K {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -11;
+            }
+        }
+    }
+    &.playing-card-rank-a, &.playing-card-rank-A {
+        .front {
+            > .inner {
+                background-position-x: $card-width * -12;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+div(common-home-controller='')
+  .container
+    .row
+      .col-sm-3(ng-repeat='player in vm.players track by $index')
+
+        .panel.panel-default(ng-class='{ active: vm.index === $index }')
+          .panel-heading(g-style='{ backgroundColor: player.color }')
+            strong P1
+            .pull-right
+              //- span.animated.bounceIn.bounceOut(ng-if='player.host')
+              i.icon-crown
+              //- i.fa.fa-diamond.animated.bounceIn.bounceOut(ng-show='player.host')
+            //- h1 TEST
+          .panel-body
+            //- | test
+            //- playing-card
+            //- playing-card(data-cover='grey')
+            //- playing-card
+
+            //- playing-card(data-size='xl', data-suit='S', data-rank='A', data-open='open')
+            //- playing-card(data-size='lg', data-suit='D', data-rank='Q', data-open='open')
+            //- playing-card(data-size='md', data-suit='S', data-rank='Q', data-open='', data-cover='grey')
+            .cards-wrap(ng-class='{ \
+                "wrap-0": player.cards.length === 0, \
+                "wrap-1": player.cards.length === 1, \
+                "wrap-2": player.cards.length === 2, \
+                "wrap-3": player.cards.length === 3, \
+                "wrap-4": player.cards.length === 4, \
+                "wrap-5": player.cards.length === 5, \
+                "wrap-6": player.cards.length === 6, \
+                "wrap-7": player.cards.length === 7, \
+                "wrap-8": player.cards.length === 8, \
+                "wrap-9": player.cards.length === 9, \
+                "wrap-10": player.cards.length === 10 \
+              }')
+              .cards.animate-bounce(ng-repeat='each in player.cards track by $index',
+                ng-class='{ \
+                  "cards-0": player.cards.length === 0, \
+                  "cards-1": player.cards.length === 1, \
+                  "cards-2": player.cards.length === 2, \
+                  "cards-3": player.cards.length === 3, \
+                  "cards-4": player.cards.length === 4, \
+                  "cards-5": player.cards.length === 5, \
+                  "cards-6": player.cards.length === 6, \
+                  "cards-7": player.cards.length === 7, \
+                  "cards-8": player.cards.length === 8, \
+                  "cards-9": player.cards.length === 9, \
+                  "cards-10": player.cards.length === 10 \
+                }')
+                playing-card(data-size='md', data-suit='{{ each.suit }}', data-rank='{{ each.rank }}',
+                  data-cover='white',
+                  data-open='{{ $parent.$index == 3 ? "open" : "" }}')
+
+      button.btn.btn-default(ng-click='vm.add()') add
+      button.btn.btn-default(ng-click='vm.remove()') remove
+      button.btn.btn-default(ng-click='vm.next()') next
+            //- span(ng-repeat='each in player.cards', style='margin-right:-0px')
+              playing-card(data-size='md', data-suit='S', data-rank='Q', data-open='open')
+
+
+
+            //- .playi
+
+            //- .playing-card-open.playing-card-rank-.playing-card-front-color-.playing-card-number-.playing-card-.playing-card-cover-.ranger-valign-.ranger-flip-.ranger-.playing-card-size-xl.playing-card-suit-S(playing-card-directive='', data-client='vm.card.client', data-size='xl', data-cover='', data-suit='S', data-rank='', data-front-color='', data-number='', data-open='open', data-highlight='', data-valign='', data-flip='', data-badge='', data-disabled='', data-content='vm.card.content', style='border: 1px dashed rgb(187, 187, 187);')
+            //-   .flipper
+            //-     .face.front
+            //-       .inner.ng-binding(ng-bind-html='vm.content')
+            //-     .face.back
+            //-       .inner

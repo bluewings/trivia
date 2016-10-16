@@ -1,0 +1,22 @@
+﻿{
+  "ENV": "development",
+  "debug": true,
+  "apiAddr": {
+    "auth": "http://10.99.217.112:8080",
+    "ncc": "http://10.113.217.209:8080",
+    "report": "http://10.113.217.209:8080"
+  },
+  "swaggerAddr": "http://test-mobile.searchad.naver.com:8010",
+  "alternatives": {
+    "apiAddr": {
+      "김종철": "http://10.64.51.105:8080",
+      "테스트 공통": "http://10.101.63.27:8080"
+    }
+  },
+  "oauth": {
+    "naver": {
+      "nidOauthClientId": "e1_J1e5YULEv0omOMnqA",
+      "nidOauthClientSecret": "b5C4kgAG7B"
+    }
+  }
+}

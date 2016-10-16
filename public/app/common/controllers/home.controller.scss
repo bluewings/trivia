@@ -1,0 +1,174 @@
+h1 {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0;
+    position: relative;
+    font-weight: 300;
+    color: #524f4e;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.col-sm-3 {
+    width: 17%;
+
+    // transform: rotate(5deg) skew(5deg);
+    // transform: rotate(-5deg) skew(-5deg);
+    // &:nth-child(even) {
+    //     transform: rotate(5deg) skew(5deg);
+    // }
+    height: 400px;
+
+    // background-color:yellow;
+    position: relative;
+
+    &:nth-child(4) {
+        width: 30%;
+
+        // transform: rotate(1.3deg) skew(1.3deg);
+   
+    }
+
+    &:nth-child(2), &:nth-child(5) {
+        .panel {
+            .panel-heading, .panel-body {
+                background-color: #008253;
+                background-color: #3277b5;
+
+                // background-color: #ffcf14;
+
+                // background-color: #ea2a29;
+                // background-color: #f16729;
+                // background-color: #f89322;
+                // background-color: #ffcf14;
+           
+            }
+        }
+
+        // transform: rotate(1.3deg) skew(1.3deg);
+   
+    }
+}
+
+.cards-wrap {
+    // padding-right: 40px;
+    white-space: nowrap;
+
+    // background-color:yellow;
+    // padding-bottom:20px;
+    // padding-right:64px;
+    $w: 149px;
+    $x: 64px;
+
+    @for $i from 1 through 10 {
+        &.wrap-#{$i} {
+            // margin-right:$w - ($w - $x) / ($i - 1) * $i
+
+            margin-right: $x;
+
+            //             margin-right:64px
+            // -
+            // (($wd - 64px)) / ($i - 1)
+
+            // ;
+            // margin-right:150px - (150px - 64px) / ($i) ;
+            // 64px / (11 - $i);
+       
+        }
+    }
+}
+
+.cards {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    max-width: 69px;
+
+    // background-color:orange;
+    transition: width 1s;
+
+    @for $i from 2 through 10 {
+        &.cards-#{$i} {
+            width: 100% / ($i - 1);
+        }
+    }
+}
+
+.animate-bounce {
+    &.ng-enter {
+        animation: bounceInDown  1s;
+    }
+
+    &.ng-leave {
+        animation: bounceOutUp 1s;
+    }
+}
+
+.panel {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    color: #fff;
+
+    /*    border-corner-shape: bevel;
+        border-corner-shape: scoop;
+        overflow: hidden;
+        border-radius: 20px;
+    */
+    .panel-heading {
+        background-image: url(/assets/img/fabric.png);
+
+        // background-image: url(/assets/img/cartboard.jpg);
+        border: none;
+
+        /*background-color: #ffcf14;*/
+        // background-color: #3277b5;
+        // background-color: #ea2a29;
+        // background-color: #f16729;
+        // background-color: #f89322;
+        // background-color: #ffcf14;
+        // background-color: #ffea0d;
+        // background-color: #87b11d;
+        // background-color: #008253;
+        // background-color: #3277b5;
+        // background-color: #4c549f;
+        // background-color: #764394;
+        // background-color: #ca0d86;
+
+        /*color: #fff;*/
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        font-size: 24px;
+    }
+
+    .panel-body {
+        background-image: url(/assets/img/fabric.png);
+
+        // background-image: url(/assets/img/cartboard.jpg);
+
+        /*backface-visibility: hidden;*/
+        /*background-color: #ffcf14;*/
+        background-color: #fff;
+        min-height: 120px;
+    }
+
+    /*background-color: #008253;*/
+
+    border: none;
+
+    /*https://codepen.io/sdthornton/pen/wBZdXq*/
+
+    /*box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.1), 7px 7px 10px rgba(0, 0, 0, 0.4);*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &.active {
+        bottom: 10px;
+
+        // margin-top: -5px;
+        // margin-bottom: 5px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+}
