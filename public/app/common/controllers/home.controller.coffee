@@ -25,7 +25,7 @@ angular.module 'seed'
   # vm.cards = [1..10]
   vm.cards = []
 
-  vm.index = 0
+  vm.index = 3
 
   vm.next = ->
     vm.index++
@@ -33,9 +33,9 @@ angular.module 'seed'
       vm.index = 0
     return
 
-  $interval ->
-    vm.next()
-  , 1000
+  # $interval ->
+  #   vm.next()
+  # , 1000
 
   vm.add = ->
     vm.cards.push vm.cards.length
@@ -111,10 +111,10 @@ angular.module 'seed'
         deal()
       , 1000
 
-  $timeout ->
-    deal()
+  # $timeout ->
+  #   deal()
       
-  , 2000
+  # , 2000
   # $interval ->
   #   deal()
   # , 6000

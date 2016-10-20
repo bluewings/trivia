@@ -21,7 +21,6 @@
     "bootstrap": "~3.3.5",
     "angular": "~1.4.3",
     "angular-animate": "~1.4.3",
-    "angular-bootstrap": "~0.12.0",
     "angular-resource": "~1.4.3",
     "angular-sanitize": "~1.4.3",
     "angular-ui-router": "~0.2.15",
@@ -29,7 +28,10 @@
     "font-awesome": "~4.3.0",
     "json-formatter": "~0.3.1",
     "moment": "~2.10.5",
-    "JsBarcode": "jsbarcode#^3.3.23"
+    "JsBarcode": "jsbarcode#^3.3.23",
+    "angular-bootstrap": "^2.2.0",
+    "jquery-ui": "^1.12.1",
+    "pixeden-stroke-7-icon": "^1.2.3"
   },
   "resolutions": {
     "angular": "~1.4.3"

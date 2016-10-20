@@ -1,17 +1,36 @@
 div(common-home-controller='')
   .container
     .row
+      .col-sm-12
+        img(src='/assets/img/bicycle-king.png', height='75',
+          uib-popover='I appeared on mouse enter',
+          popover-placement='right', style='opacity:1')
+        //- img(src='/assets/img/bicycle-king.png', height='75',
+          uib-popover='I appeared on mouse enter',
+          popover-placement='right', style='opacity:1')
+    .row
       .col-sm-3(ng-repeat='player in vm.players track by $index')
 
-        .panel.panel-default(ng-class='{ active: vm.index === $index }')
+        .panel.panel-default(ng-class='{ active: vm.index === $index }',
+          active-border='', index='{{ $index }}')
           .panel-heading(g-style='{ backgroundColor: player.color }')
-            strong P1
+            //- strong P1
+            img.img-circle(src='https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-1/c37.37.466.466/s160x160/255648_165517813512539_8120339_n.jpg?oh=279680a19fde47806395f7b5768391a8&oe=585FC74E',
+              uib-popover='I appeared on mouse enter',
+              popover-placement='top-left',
+              style='opacity:1')
+            //- small 3pt
+
+
             .pull-right
               //- span.animated.bounceIn.bounceOut(ng-if='player.host')
-              i.icon-crown
+              //- i.icon-crown
+              //- img(ng-if='$index === 1', src='/assets/img/invert.png', height='48')
+              img(ng-if='$index === 1', src='/assets/img/bicycle-king.png', height='48')
               //- i.fa.fa-diamond.animated.bounceIn.bounceOut(ng-show='player.host')
             //- h1 TEST
           .panel-body
+
             //- | test
             //- playing-card
             //- playing-card(data-cover='grey')
@@ -51,9 +70,7 @@ div(common-home-controller='')
                   data-cover='white',
                   data-open='{{ $parent.$index == 3 ? "open" : "" }}')
 
-      button.btn.btn-default(ng-click='vm.add()') add
-      button.btn.btn-default(ng-click='vm.remove()') remove
-      button.btn.btn-default(ng-click='vm.next()') next
+
             //- span(ng-repeat='each in player.cards', style='margin-right:-0px')
               playing-card(data-size='md', data-suit='S', data-rank='Q', data-open='open')
 
@@ -67,3 +84,15 @@ div(common-home-controller='')
             //-       .inner.ng-binding(ng-bind-html='vm.content')
             //-     .face.back
             //-       .inner
+
+
+
+
+      br
+      br
+      br
+      br
+
+      button.btn.btn-default(ng-click='vm.add()') add
+      button.btn.btn-default(ng-click='vm.remove()') remove
+      button.btn.btn-default(ng-click='vm.next()') next
