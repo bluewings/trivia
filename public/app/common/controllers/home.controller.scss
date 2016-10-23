@@ -11,6 +11,34 @@ h1 {
 .popover {
     color: #333;
 }
+// $suit-size: 164px;
+$suit-size-resized: 60px;
+
+.card {
+    width: 95px;
+    height: 135px;
+    border: 1px solid silver;
+    // background-color: #fff;
+    // background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(223, 226, 231) 100%);
+
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(223, 226, 231) 90%);
+
+    background: linear-gradient(to bottom, rgb(255, 213, 75) 0%, rgb(236, 169, 29) 100%);
+
+background: linear-gradient(to top, rgb(254, 240, 89) 0%, rgb(251, 202, 79) 30%, rgb(255, 237, 98) 100%);
+ 
+background: linear-gradient(355deg, rgb(255, 237, 98) 0%, rgb(251, 202, 79) 30%, rgb(254, 240, 89) 100%);
+
+// background: linear-gradient(to bottom, #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+ .suit {
+    background-size:$suit-size-resized * 4  $suit-size-resized;
+    background-image:url(/assets/img/card-suit-color1.png);
+width:$suit-size-resized;
+height:$suit-size-resized;
+
+ }   
+}
 
 .col-sm-3 {
     width: 17%;
